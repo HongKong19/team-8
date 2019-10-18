@@ -3,6 +3,8 @@ import {makeStyles} from '@material-ui/core/styles';
 import {AppBar, Tab, Tabs} from "@material-ui/core";
 import TabPanel from './TabPanel';
 import DonorTable from "./DonorTable";
+import donorData from "./donorData";
+import TagsPage from "./Tags/TagsPage";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,13 +38,13 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <DonorTable/>
+        <DonorTable data={donorData}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <TagsPage/>
       </TabPanel>
     </div>
   );
