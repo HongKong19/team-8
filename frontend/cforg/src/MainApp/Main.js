@@ -2,6 +2,10 @@ import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {AppBar, Tab, Tabs} from "@material-ui/core";
 import TabPanel from './TabPanel';
+import EventPage from '../components/EventPage';
+import EventDetailPage from '../components/EventDetailPage';
+import GraphPage from '../components/GraphPage';
+
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,12 +22,32 @@ function a11yProps(index) {
 }
 
 export default function SimpleTabs() {
+
+
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     shouldShowEventDetails : false,
+  //   }
+  // };
+
+
+
+
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  // showEventDetails(){
+  //   this.setState({
+  //     shouldShowEventDetails: !shouldShowEventDetails
+  //   });
+  // }
+
+
 
   return (
     <div className={classes.root}>
@@ -32,16 +56,23 @@ export default function SimpleTabs() {
           <Tab label="Donors" {...a11yProps(0)} />
           <Tab label="Events" {...a11yProps(1)} />
           <Tab label="Tags" {...a11yProps(2)} />
+          <Tab label="Graph" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         Item One
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Item Two
+        Events
+        <EventPage />
+        <EventDetailPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
         Item Three
+      </TabPanel>
+      <TabPanel value={value} index={3}>
+        Graph
+        <GraphPage/>
       </TabPanel>
     </div>
   );
