@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Fuse from 'fuse.js';
-import {Input} from '@material-ui/core';
+import {Input, Typography, Grid} from '@material-ui/core';
 import donorData from "../donorData";
 import DonorTable from "../DonorTable";
 
@@ -14,6 +14,9 @@ export default function TagsPage(props) {
 
   return (
     <>
+      <Typography component='span' style={{marginRight: 10}}>
+        Search Tag
+      </Typography>
     <Input
       autoFocus
       style={{marginBottom: 20}}
