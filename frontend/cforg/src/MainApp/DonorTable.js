@@ -31,7 +31,7 @@ const Cols = [
 
 const searchOptions = {
   keys: ['id'],
-  threshold: 1
+  threshold: 0
 };
 
 const useStyles = makeStyles({
@@ -51,15 +51,14 @@ const useStyles = makeStyles({
 
 export default function DonorTable(props){
   const classes = useStyles();
+  console.log(props.data);
   const [selected, setSelected] = useState('');
   const fuse = new Fuse(props.data, searchOptions);
   let currentPerson = fuse.search(selected)[0];
-  console.log(currentPerson);
   if (selected === '') {
     return (
       <ReactTable
         getTrProps={(state, rowInfo, column) => {
-          console.count(rowInfo);
           return {
             onClick: () => {
               setSelected(rowInfo.original.id)
