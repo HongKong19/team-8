@@ -36,6 +36,40 @@
   border-radius: 10px
 }
 
-.eventTitle {
+.event-title {
   text-align: center;
+  font-size: large;
+  font-family: sans-serif;
+}
+.event-page-title {
+  padding: 10px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: xx-large;
+  font-weight: 900;
+}
+
+.event-details {
+  width: 100%;
+  display: inline-block;
+}
+
+.event-details-title {
+  width: 100%;
+  /* text-align: center; */
+}
+
+.event-details-img {
+  height: 370px;
+  width: 450px;
+  border-radius: 10px;
+}
+
+.event-details-text {
+  border: dashed;
+}
+
+
+.clickable {
+  cursor: pointer;
 }

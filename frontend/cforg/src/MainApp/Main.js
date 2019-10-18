@@ -25,31 +25,12 @@ function a11yProps(index) {
 
 export default function SimpleTabs() {
 
-
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     shouldShowEventDetails : false,
-  //   }
-  // };
-
-
-
-
   const classes = useStyles();
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
-  // showEventDetails(){
-  //   this.setState({
-  //     shouldShowEventDetails: !shouldShowEventDetails
-  //   });
-  // }
-
-
 
   return (
     <div className={classes.root}>
@@ -65,9 +46,7 @@ export default function SimpleTabs() {
         <DonorTable data={donorData}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Events
         <EventPage />
-        <EventDetailPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <TagsPage/>

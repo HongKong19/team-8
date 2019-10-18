@@ -6,14 +6,13 @@ import '../App.css';
 class Event extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
     return (
         <div className="event" onClick={this.props.showEventDetails}>
           <div>
-            <img className="event-img" src={this.props.eventImg} alt="star icon load failed!" onClick=""/>
+            <img className="event-img" src={this.props.eventImg} alt="star icon load failed!"/>
           </div>
           <div>
             <p className="event-title">{this.props.eventTitle}</p>
