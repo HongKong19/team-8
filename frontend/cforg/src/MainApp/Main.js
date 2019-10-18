@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {AppBar, Tab, Tabs} from "@material-ui/core";
 import TabPanel from './TabPanel';
-import EventPage from '../components/EventPage';
-import EventDetailPage from '../components/EventDetailPage';
-import GraphPage from '../components/GraphPage';
-
+import DonorTable from "./DonorTable";
+import donorData from "./donorData";
+import TagsPage from "./Tags/TagsPage";
+import EventPage from "../components/EventPage";
+import EventDetailPage from "../components/EventDetailPage";
+import GraphPage from "../components/GraphPage";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -60,7 +62,7 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <DonorTable data={donorData}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Events
@@ -68,7 +70,7 @@ export default function SimpleTabs() {
         <EventDetailPage />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <TagsPage/>
       </TabPanel>
       <TabPanel value={value} index={3}>
         Graph
