@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import {AppBar, Tab, Tabs} from "@material-ui/core";
 import TabPanel from './TabPanel';
+import DonorTable from "./DonorTable";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,7 +36,7 @@ export default function SimpleTabs() {
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        Item One
+        <DonorTable/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two
