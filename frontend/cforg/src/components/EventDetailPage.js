@@ -1,6 +1,35 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import '../App.css';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
+import {Chip} from "@material-ui/core";
+import donorData from "../MainApp/donorData";
+
+
+const Cols = [
+  {
+    Header: "Donors",
+    accessor: 'name'
+  },
+  {
+    Header: "Possible Donors",
+    accessor: 'name'
+  },
+  {
+    Header: "Tags",
+    accessor: 'tags',
+    Cell: (props) => (
+      props.value.map((tag) => (
+        <Chip label={tag}/>
+      ))
+    )
+  },
+  {
+    Header: "Organization",
+    accessor: 'org'
+  }
+];
 
 
 class EventDetailPage extends Component {
@@ -33,10 +62,11 @@ class EventDetailPage extends Component {
           </div>
 
 
-          <div className="event-details-people">
-            <div className="event-details-people-donors">donors</div>
-            <div className="event-details-people-possible-donors">possible donors</div>
-          </div>
+          <ReactTable
+            columns={Cols}
+            data={donorData}
+            defaultPageSize={5}
+          />
 
           <button onClick={this.props.closeEventDetails}>Go back</button>
         </div>

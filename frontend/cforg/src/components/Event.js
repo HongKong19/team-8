@@ -10,7 +10,7 @@ class Event extends Component {
 
   render() {
     return (
-        <div className="event" onClick={this.props.showEventDetails}>
+        <div className="event clickable" onClick={this.props.showEventDetails}>
           <div>
             <img className="event-img" src={this.props.eventImg} alt="star icon load failed!"/>
           </div>
