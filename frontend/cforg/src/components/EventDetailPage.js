@@ -14,7 +14,7 @@ const Cols = [
   },
   {
     Header: "Possible Donors",
-    accessor: 'name'
+    accessor: 'circle[0]'
   },
   {
     Header: "Tags",
