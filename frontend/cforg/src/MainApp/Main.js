@@ -52,7 +52,6 @@ export default function SimpleTabs() {
         <TagsPage/>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Graph
         <GraphPage/>
       </TabPanel>
     </div>

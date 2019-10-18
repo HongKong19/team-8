@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import graph from './graph.jpeg';
 
 // import './App.css';
 // import $ from 'jquery';
@@ -18,7 +19,7 @@ class GraphPage extends Component {
   render() {
     return (
         <div className="event" onClick={this.props.showEventDetails}>
-          <p>This is Graph Page</p>
+          <img src={graph} alt='graph'/>
         </div>
     )
   }
